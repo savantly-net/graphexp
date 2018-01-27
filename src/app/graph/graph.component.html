@@ -1,0 +1,43 @@
+<div fxLayout="column" fxFlex fxLayoutAlign="center center">
+
+<div id="spotContainer">
+	<nav>
+		<fieldset>
+			<legend>Navigation</legend>
+			<label>Property</label>
+			<span id="prop_choice"><input name="search_field" id="search_field" value="" /></span>
+			<label>Id/Keyword</label>
+			<input name="search_value" id="search_value" value="" />
+			<button class="mat-raised-button" name="search query" onclick="search_query();">Search</button>
+			<button class="mat-raised-button" name="clear" onclick="graph_viz.clear();">Clear</button>
+			<div class="mat-input-container">
+				<input type="checkbox" name="Freeze" id="freeze-in" /><label>Freeze</label>
+				<input type="checkbox" name="showName_box" id="showName" onclick="graphShapes.show_names()"/><label>Show Labels</label>
+				<input type="number" id="nbLayers" min="1" max="128" onclick="set_nb_layers()"><label>Fading Layers</label>
+			</div>
+		</fieldset>
+		
+	</nav>
+	
+	<div class="spot-content">
+		<div class="left_bar">
+			<div id="graphInfoBar">
+				<button class="mat-raised-button" name="graphInfo" onclick="get_graph_info();">Refresh graph info</button>
+				<input type="checkbox" name="showgraphinfo" id="showgraphinfo" onchange="show_hide_element('#graphInfo')"/>Show/hide graph info
+				<div><br/></div>
+			</div>
+			<div id="graphInfo"></div>
+		</div>
+		<div id="details" class="right_bar">
+			<div id="messageArea"></div>
+			<div id="outputArea"></div>
+			<div id="nodeInfo" style="background-color:transparent;pointer-events:none;"></div>				
+		</div>
+		
+		<div class="main" id="main">
+			<div>{{results}}</div>
+			<svg></svg>
+		</div>
+	</div>
+</div>
+</div>
